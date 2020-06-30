@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  gateway:
+    image: erick/gateway
+    ports:
+      - 8080:9090
+    depends_on:
+      - ms1
+      - ms2
+  ms1:
+    image: erick/ms1
+  ms2:
+    image: erick/ms2

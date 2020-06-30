@@ -8,13 +8,13 @@ spring:
       - name: SCGWGlobalFilter
       routes:
         - id: nt-ms1
-          uri: http://localhost:9091/
+          uri: http://ms1:9091/
           predicates:
             - Path=/nt-ms1/**
           filters:
           - name: SCGWPreFilter
           - name: SCGWPostFilter
         - id: nt-ms2
-          uri: http://localhost:9092/
+          uri: http://ms2:9092/
           predicates:
             - Path=/nt-ms2/**
