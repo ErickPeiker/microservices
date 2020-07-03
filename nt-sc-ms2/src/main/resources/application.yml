@@ -1,8 +1,29 @@
 spring:
+  profiles:
+    active: "dev"
+
+---
+
+spring:
+  profiles: dev
   rabbitmq:
     host: localhost
     port: 5672
     username: guest
     password: guest
+    
 server:
   port: 9092
+
+player:
+  path: C:\Users\erick.peiker\eclipse-workspace\spring-cloud-gateway\nt-sc-ms2\src\main\resources\static\music\
+  
+---
+
+spring:
+  profiles: prod
+  rabbitmq:
+    host: rabbitmq
+    
+player:
+  path: /usr/ms2/sounds/

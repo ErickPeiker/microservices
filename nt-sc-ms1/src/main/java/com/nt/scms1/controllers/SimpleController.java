@@ -1,4 +1,4 @@
-package com.nt.scms1.controller;
+package com.nt.scms1.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.server.reactive.ServerHttpRequest;

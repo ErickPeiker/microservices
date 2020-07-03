@@ -24,7 +24,7 @@ public class SCGWPostFilter extends AbstractGatewayFilterFactory<SCGWPostFilter.
 				ServerHttpResponse response = exchange.getResponse();
 				HttpHeaders headers = response.getHeaders();
 				headers.forEach((k,v)->{
-					System.out.println(k + " : " + v);
+					//System.out.println(k + " : " + v);
 				});
 			}));
 		};

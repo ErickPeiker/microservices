@@ -1,8 +1,26 @@
 spring:
+  profiles:
+    active: "dev"
+
+---
+
+spring:
+  profiles: dev
   rabbitmq:
     host: localhost
     port: 5672
     username: guest
     password: guest
+    
 server:
   port: 9091
+  
+---
+
+spring:
+  profiles: prod
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: guest
+    password: guest

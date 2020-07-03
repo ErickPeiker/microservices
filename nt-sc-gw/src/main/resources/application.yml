@@ -1,7 +1,35 @@
+spring:
+  profiles:
+    active: "dev"
+
+---
+
+spring:
+  profiles: dev
+  cloud:
+    gateway:
+      default-filters:
+      - name: SCGWGlobalFilter
+      routes:
+        - id: nt-ms1
+          uri: http://localhost:9091/
+          predicates:
+            - Path=/nt-ms1/**
+          filters:
+          - name: SCGWPreFilter
+          - name: SCGWPostFilter
+        - id: nt-ms2
+          uri: http://localhost:9092/
+          predicates:
+            - Path=/nt-ms2/**
+            
 server:
   port: 9090
+            
 ---
+
 spring:
+  profiles: prod
   cloud:
     gateway:
       default-filters:
@@ -18,3 +46,6 @@ spring:
           uri: http://ms2:9092/
           predicates:
             - Path=/nt-ms2/**
+            
+server:
+  port: 80
